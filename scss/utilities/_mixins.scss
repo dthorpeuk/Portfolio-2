@@ -1,0 +1,92 @@
+@mixin mq($s){
+    @if $s == "x-small"{
+        @media(max-width: $brkpoint-xs){
+            @content;
+        }
+    }
+        @else if $s == "small"{
+            @media(min-width: $brkpoint-xs) and (max-width: $brkpoint-s){
+                @content;
+            }
+        }
+        @else if $s == "small-up"{
+            @media(min-width: $brkpoint-xs){
+                @content;
+            }
+        }
+        @else if $s == "medium"{
+            @media(min-width: $brkpoint-s) and (max-width: $brkpoint-m){
+                @content;    
+            }
+        }
+        @else if $s == "medium-up"{
+            @media(min-width: $brkpoint-s){
+                @content;    
+            }
+        }
+        @else if $s == "large"{
+            @media(min-width: $brkpoint-m) and (max-width: $brkpoint-l){
+                @content;
+            }
+        }
+        @else if $s == "x-large"{
+            @media(min-width: $brkpoint-l) {
+                @content;
+            }
+        }
+}
+@mixin reveal($disp,$min){
+    @include mq($min){
+     display: #{$disp};
+     }
+ 
+ }
+ @mixin reveal-text($par){
+    @for $i from 0 through 25{
+        .#{$par} span:nth-child(#{$i}){
+            -webkit-animation-delay: calc(#{$i}*0.05s) ;
+            animation-delay:calc(#{$i}s*0.05s) ;
+        }
+    }
+    .#{$par} span:nth-child(1) {
+        -webkit-animation-delay: 0.05s;
+                animation-delay: 0.05s;
+      }
+      .#{$par} span:nth-child(2) {
+        -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+      }
+      .#{$par} span:nth-child(3) {
+        -webkit-animation-delay: 0.15s;
+                animation-delay: 0.15s;
+      }
+      .#{$par} span:nth-child(4) {
+        -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+      }
+      .#{$par} span:nth-child(5) {
+        -webkit-animation-delay: 0.25s;
+                animation-delay: 0.25s;
+      }
+      .#{$par} span:nth-child(6) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+      }
+
+ }
+ @mixin create-sphere($size,$main, $sec){
+    border-radius: 50%;
+    //position: fixed;
+    //transition: top 2s, left 2s, ease;
+    //transition: left 2s ease;
+   // top: $top;
+   // left: $left;
+    
+    width: $size;
+    height: $size;
+    background: radial-gradient(
+        circle at 30% 30%,
+        $main,
+        $sec
+    );
+}
