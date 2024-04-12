@@ -532,9 +532,9 @@ nav.addEventListener("click",(e)=>{
       let elementX = parseInt( elementStyle.getPropertyValue('left'));
       let elementY = parseInt(elementStyle.getPropertyValue('top'));
       obj.isBackNode =false;
-      obj.closeNavNode(null,100,600);
+      obj.closeNavNode(null,100,vhToPx(600));
     //  $(element).queue(()=>{
-        $(element).animate({left:100 , top:600 },animation_speed);
+        $(element).animate({left:100 , top:vhToPx(50) },animation_speed);
       //  $(element).dequeue();
     //  });
       
@@ -599,7 +599,7 @@ nav.addEventListener("click",(e)=>{
 
 
 
-createNavNode("root","#","100px","600px");
+createNavNode("root","#","100px",vhToPx(50));
 
 
 const circleDiv = '<div class="nav-node"></div>';
