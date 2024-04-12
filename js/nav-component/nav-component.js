@@ -395,7 +395,7 @@ $("." + getNavTag(activeName)).queue(()=>{
 
       }
     }
-    if(!this.isBackNode){
+    if(!this.isBackNode && this.name != "root"){
       let iconElement = document.querySelector("." + getIconTag(this.name));
       let textElement =document.querySelector("." + getTextTag(this.name));
       textElement.textContent = this.name;
@@ -531,13 +531,13 @@ nav.addEventListener("click",(e)=>{
       let elementStyle = getComputedStyle(element);
       let elementX = parseInt( elementStyle.getPropertyValue('left'));
       let elementY = parseInt(elementStyle.getPropertyValue('top'));
-
+      obj.isBackNode =false;
       obj.closeNavNode(null,100,600);
     //  $(element).queue(()=>{
-        $(element).animate({left:100 , top:600 },2000);
+        $(element).animate({left:100 , top:600 },animation_speed);
       //  $(element).dequeue();
     //  });
-      obj.isBackNode =false;
+      
     }
  else if(obj.subNodes.length!=0)
 {    

@@ -151,24 +151,24 @@ body{
     //     float: none;
     //     margin-left: $sidebar-width-s;
     // }
-    @include mq(x-small){
-        margin-top: $topbar-height;
-    }
-    @include mq(small){
-        margin-top: $topbar-height;
-    }
-    @include mq(medium){
-        float: none;
-        margin-left: $sidebar-width-m;
-    }
-    @include mq(large){
-        float: none;
-        margin-left: $sidebar-width-l;
-    }
-    @include mq(x-large){
-        float: none;
-        margin-left: $sidebar-width-l;
-    }
+    // @include mq(x-small){
+    //     margin-top: $topbar-height;
+    // }
+    // @include mq(small){
+    //     margin-top: $topbar-height;
+    // }
+    // @include mq(medium){
+    //     float: none;
+    //     margin-left: $sidebar-width-m;
+    // }
+    // @include mq(large){
+    //     float: none;
+    //     margin-left: $sidebar-width-l;
+    // }
+    // @include mq(x-large){
+    //     float: none;
+    //     margin-left: $sidebar-width-l;
+    // }
 }
 .scroll{
 
